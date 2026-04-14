@@ -27,10 +27,10 @@
         
         /* Header Styles */
         header {
-            background-color: #1da1f2;
+            background: linear-gradient(to right, #1da1f2, #0f7ae5);
             color: white;
             padding: 10px 0;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.2);
             position: sticky;
             top: 0;
             z-index: 100;
@@ -43,18 +43,20 @@
         }
         
         .logo {
-            display: flex;
+            display极速赛车开奖直播 flex;
             align-items: center;
         }
         
         .logo i {
-            font-size: 28px;
+            font-size: 32px;
             margin-right: 10px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
         }
         
         .logo h1 {
-            font-size: 20px;
-            font-weight: 700;
+            font-size: 24px;
+            font-weight: 800;
+            letter-spacing: 0.5极速赛车开奖直播
         }
         
         nav ul {
@@ -72,6 +74,13 @@
             font-weight: 600;
             display: flex;
             align-items: center;
+            padding: 8px 12px;
+            border-radius: 20px;
+            transition: background-color 0.3s;
+        }
+        
+        nav ul li a:hover {
+            background-color: rgba(255, 255, 255, 0.2);
         }
         
         nav ul li a i {
@@ -89,9 +98,9 @@
         .sidebar {
             flex: 0 0 250px;
             background-color: white;
-            border-radius: 10px;
+            border-radius: 15px;
             padding: 20px;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
             height: fit-content;
         }
         
@@ -99,23 +108,27 @@
             display: flex;
             align-items: center;
             margin-bottom: 20px;
+            padding-bottom: 20px;
+            border-bottom: 1px solid #e6ecf0;
         }
         
         .user-avatar {
-            width: 50px;
-            height: 50px;
+            width: 60px;
+            height: 60极速赛车开奖直播
             border-radius: 50%;
-            background-color: #1da1f2;
+            background: linear-gradient(to bottom right, #1da1f2, #0f7ae5);
             display: flex;
             align-items: center;
             justify-content: center;
             color: white;
-            font-size: 20px;
-            margin-right: 10px;
+            font-size: 24px;
+            margin-right: 15px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
         }
         
         .user-info h3 {
-            font-size: 16px;
+            font-size: 18px;
+            margin-bottom: 5px;
         }
         
         .user-info p {
@@ -125,7 +138,7 @@
         
         .sidebar-menu {
             list-style: none;
-        }
+极速赛车开奖直播        }
         
         .sidebar-menu li {
             margin-bottom: 15px;
@@ -137,16 +150,22 @@
             font-weight: 600;
             display: flex;
             align-items: center;
+            padding: 10px;
+            border-radius: 10px;
+            transition: all 0.3s;
         }
         
         .sidebar-menu a i {
-            margin-right: 10px;
+            margin-right: 12px;
             color: #1da1f2;
             width: 20px;
+            font-size: 18px;
         }
         
         .sidebar-menu a:hover {
+            background-color: #f5f8fa;
             color: #1da1f2;
+            transform: translateX(5px);
         }
         
         /* Forum Content */
@@ -156,21 +175,27 @@
         
         .post-form {
             background-color: white;
-            border-radius: 10px;
+            border-radius: 15px;
             padding: 20px;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            box-shadow: 0 4px 12极速赛车开奖直播 rgba(0,0,0,0.1);
             margin-bottom: 20px;
         }
         
-        .post-form textarea {
+        .极速赛车开奖直播-form textarea {
             width: 100%;
-            border: 1px solid #e6ecf0;
-            border-radius: 10px;
+            border: 2px solid #e6ecf0;
+            border-radius: 15px;
             padding: 15px;
             resize: vertical;
-            min-height: 100px;
+            min-height: 120px;
             font-size: 16px;
             margin-bottom: 15px;
+            transition: border-color 0.3s;
+        }
+        
+        .post-form textarea:focus {
+            outline: none;
+            border-color: #1da1f2;
         }
         
         .post-options {
@@ -182,14 +207,20 @@
         
         .option-btn {
             background-color: #f5f8fa;
-            border: 1px solid #e6ecf0;
+            border: 1px solid #e极速赛车开奖直播f0;
             border-radius: 20px;
             padding: 8px 15px;
             display: flex;
             align-items: center;
-            cursor: pointer;
+极速赛车开奖直播            cursor: pointer;
             font-size: 14px;
             color: #657786;
+            transition: all 0.3s;
+        }
+        
+        .option-btn:hover {
+            background-color: #e8f5fe;
+            color: #1da1f2;
         }
         
         .option-btn i {
@@ -208,59 +239,76 @@
             font-size: 14px;
         }
         
+        .char-count.warning {
+            color: #e0245e;
+            font-weight: bold;
+        }
+        
         .post-btn {
-            background-color: #1da1f2;
+            background: linear-gradient(to right, #1da1极速赛车开奖直播, #0f7ae5);
             color: white;
             border: none;
-            border-radius: 20px;
-            padding: 10px 20px;
+            border-radius: 25px;
+            padding: 12px 24px;
             font-weight: 700;
             cursor: pointer;
+            transition: all 0.3s;
+            box-shadow: 0 2px 5px rgba(0,0,0极速赛车开奖直播);
         }
         
         .post-btn:hover {
-            background-color: #1a91da;
+            background: linear-gradient(to right, #0极速赛车开奖直播e5, #0a66c5);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(0,0,0,0.15);
         }
         
         /* Posts */
         .posts {
             background-color: white;
-            border-radius: 10px;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            border-radius: 15px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
             overflow: hidden;
         }
         
         .post {
             padding: 20px;
             border-bottom: 1px solid #e6ecf0;
+            transition: background-color 0.3s;
+        }
+        
+        .post:hover {
+            background-color: #fafafa;
         }
         
         .post-header {
             display: flex;
             align-items: center;
-            margin-bottom: 10px;
+            margin-bottom: 12px;
         }
         
         .post-avatar {
-            width: 40px;
-            height: 40px;
+            width: 48px;
+            height: 48px;
             border-radius: 50%;
-            background-color: #1da1f2;
+            background: linear-gradient(to bottom right, #1da1f2, #0f7ae5);
             display: flex;
             align-items: center;
             justify-content: center;
             color: white;
-            font-size: 16px;
-            margin-right: 10px;
+            font-size: 18px;
+            margin-right: 12px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
         }
         
         .post-user {
             font-weight: 700;
+            font极速赛车开奖直播: 16px;
         }
         
         .post-handle {
             color: #657786;
             margin-left: 5px;
+            font-size: 15px;
         }
         
         .post-time {
@@ -273,11 +321,13 @@
             margin-bottom: 15px;
             font-size: 16px;
             line-height: 1.5;
+            padding-left: 60px;
         }
         
         .post-footer {
             display: flex;
             color: #657786;
+            padding-left: 60px;
         }
         
         .post-action {
@@ -285,14 +335,29 @@
             align-items: center;
             margin-right: 20px;
             cursor: pointer;
+            transition: color 0.3s;
+            padding: 5极速赛车开奖直播 10px;
+            border-radius: 10px;
+        }
+        
+        .post-action:hover {
+            background-color: #f0f7ff;
         }
         
         .post-action i {
             margin-right: 5px;
         }
         
-        .post-action:hover {
+        .post-action.comment:hover {
             color: #1da1f2;
+        }
+        
+        .post-action.retweet:hover {
+            color: #17bf63;
+        }
+        
+        .post-action.like:hover {
+            color: #e0245e;
         }
         
         /* Right Sidebar */
@@ -302,23 +367,31 @@
         
         .trending-box, .who-to-follow {
             background-color: white;
-            border-radius: 10px;
+            border-radius: 15px;
             padding: 20px;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
             margin-bottom: 20px;
         }
         
         .box-title {
-            font-size: 18px;
-            font-weight: 700;
+            font-size: 20px;
+            font-weight: 800;
             margin-bottom: 15px;
-            padding-bottom: 10px;
-            border-bottom: 1px solid #e6ecf0;
+            padding-bottom: 12px;
+            border-bottom: 2px solid #e6ecf极速赛车开奖直播
+            color: #14171a;
         }
         
         .trending-item, .follow-item {
-            padding: 10px 0;
+            padding: 12px 0;
             border-bottom: 1px solid #e6ecf0;
+            transition: background-color 0.3极速赛车开奖直播
+            border-radius: 8px;
+            padding: 10px;
+        }
+        
+        .trending-item:hover, .follow-item:hover {
+            background-color: #f5f8fa;
         }
         
         .trending-item:last-child, .follow-item:last-child {
@@ -328,11 +401,12 @@
         .trending-topic {
             font-weight: 700;
             margin-bottom: 5px;
-        }
+            color: #14171a;
+极速赛车开奖直播        }
         
         .trending-count {
             color: #657786;
-            font-size: 14px;
+            font-size极速赛车开奖直播 14px;
         }
         
         .follow-item {
@@ -347,16 +421,17 @@
         }
         
         .follow-avatar {
-            width: 40px;
-            height: 40px;
+            width: 48px;
+            height: 48px;
             border-radius: 50%;
-            background-color: #1da1f2;
+            background: linear-gradient(to bottom right, #1da1f2, #0f7ae5);
             display: flex;
             align-items: center;
             justify-content: center;
             color: white;
-            font-size: 16px;
-            margin-right: 10px;
+            font-size: 18px;
+            margin-right: 12px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
         }
         
         .follow-btn {
@@ -364,17 +439,27 @@
             color: white;
             border: none;
             border-radius: 20px;
-            padding: 5px 15px;
+            padding: 8px 16px;
             font-weight: 700;
             cursor: pointer;
+            transition: all 0.3s;
+        }
+        
+        .follow-btn:hover {
+            background-color: #0f7ae5;
+            transform: scale(1.05);
         }
         
         /* Footer */
         footer {
             text-align: center;
-            padding: 20px 0;
+            padding: 30px 0;
             color: #657786;
             font-size: 14px;
+            margin-top: 40px;
+            background-color: white;
+            border-radius: 15px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.极速赛车开奖直播);
             margin-top: 40px;
         }
         
@@ -397,17 +482,146 @@
             }
             
             nav ul {
-                margin-top: 10px;
+                margin-top: 10极速赛车开奖直播
                 justify-content: center;
+                flex-wrap: wrap;
             }
             
             nav ul li {
-                margin: 0 10px;
+                margin: 5px;
             }
             
             .post-options {
                 flex-direction: column;
             }
+            
+            .post-body, .post-footer {
+                padding-left: 0;
+            }
+            
+            .post-header {
+                flex-wrap: wrap;
+            }
+            
+            .post-time {
+                margin-left: 0;
+                width: 100%;
+                margin-top: 5px;
+            }
+        }
+        
+        /* Toast notification */
+        .to极速赛车开奖直播 {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background-color: #17bf63;
+            color: white;
+            padding: 15px 25px;
+            border-radius: 10px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+            opacity: 0;
+            transform: translateY(100px);
+            transition: all 0.5s;
+            z-index: 极速赛车开奖直播
+        }
+        
+        .toast.show {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        /* Loading animation */
+        .loading {
+            display: none;
+            text-align: center;
+            padding: 20px;
+        }
+        
+        .loading .spinner {
+            border: 4px solid #f3f3f极速赛车开奖直播
+            border-top: 4px solid #1da1f2;
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            animation: spin 1s linear infinite;
+            margin: 0 auto;
+        }
+        
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+        
+        /* Admin panel */
+        .admin-panel {
+            background-color: white;
+            border-radius: 15px;
+            padding: 20px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            margin-top: 20px;
+        }
+        
+        .admin-panel h2 {
+            font-size: 20px;
+            font-weight: 800;
+            margin-bottom: 15px;
+            padding-bottom: 12px;
+            border-bottom: 2px solid #e6ecf0;
+            color: #14171a;
+        }
+        
+        .admin-stats {
+            display: grid;
+            grid-template-column极速赛车开奖直播: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+            margin-bottom: 20px;
+        }
+        
+        .stat-card {
+            background: linear-gradient(to right, #1da1f2极速赛车开奖直播 #0f7ae5);
+            color: white;
+            padding: 15px;
+            border-radius: 10px;
+            text-align: center;
+        }
+        
+        .stat-card h3 {
+            font-size: 14px;
+            margin-bottom: 5px;
+        }
+        
+        .stat-card p {
+            font-size: 24px;
+            font-weight: 700;
+        }
+        
+        .compression-controls {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 15px;
+        }
+        
+        .compression-btn {
+            background-color: #1da1f2;
+            color: white;
+            border: none;
+            border-radius: 20px;
+            padding: 10px 20px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+极速赛车开奖直播        }
+        
+        .compression-btn:hover {
+            background-color: #0f7ae5;
+        }
+        
+        .compression-info {
+            background-color: #f5f8fa;
+            padding: 15px;
+            border-radius: 10px;
+            font-size: 14px;
         }
     </style>
 </head>
@@ -436,11 +650,11 @@
             <div class="sidebar">
                 <div class="user-profile">
                     <div class="user-avatar">
-                        <i class="fas fa-user"></i>
+                        <i class="fas fa-user"></极速赛车开奖直播
                     </div>
                     <div class="user-info">
-                        <h3>Your Name</h3>
-                        <p>@yourusername</p>
+                        <h3 id="username">Your Name</h3>
+                        <p id="userhandle">@yourusername</p>
                     </div>
                 </div>
                 
@@ -450,82 +664,63 @@
                     <li><a href="#"><i class="fas fa-bookmark"></i> Bookmarks</a></li>
                     <li><a href="#"><i class="fas fa-bolt"></i> Moments</a></li>
                     <li><a href="#"><i class="fas fa-cog"></i> Settings</a></li>
+                    <li><a href="#admin-panel"><i class="fas fa-tools"></极速赛车开奖直播> Admin</a></li>
                 </ul>
             </div>
             
             <div class="forum-content">
                 <div class="post-form">
-                    <textarea placeholder="What's happening?"></textarea>
+                    <textarea id="postContent" placeholder="What's happening?"></textarea>
                     
                     <div class="post-options">
                         <div class="option-btn"><i class="fas fa-image"></i> Media</div>
                         <div class="option-btn"><i class="fas fa-poll"></i> Poll</div>
-                        <div class="option-btn"><i class="fas fa-map-marker-alt"></i> Location</div>
+                        <div class="option-btn"><i class="fas极速赛车开奖直播 fa-map-marker-alt"></i> Location</极速赛车开奖直播
                         <div class="option-btn"><i class="fas fa-smile"></i> Emoji</div>
                     </div>
                     
                     <div class="post-actions">
-                        <div class="char-count">280 characters remaining</div>
-                        <button class="post-btn">Tweet</button>
+                        <div id="charCount" class="char-count">280 characters remaining</div>
+                        <button id="postBtn" class="post-btn">Tweet</button>
                     </div>
                 </div>
                 
-                <div class="posts">
-                    <div class="post">
-                        <div class="post-header">
-                            <div class="post-avatar">
-                                <i class="fas fa-user"></i>
-                            </div>
-                            <div class="post-user">Twitter User <span class="post-handle">@twitteruser · 2h</span></div>
-                            <div class="post-time"><i class="fas fa-globe-americas"></i></div>
+                <div class="loading">
+                    <div class="spinner"></div>
+                    <p>Loading posts...</p>
+                </div>
+                
+                <div id="postsContainer" class="posts">
+                    <!-- Posts will be loaded here -->
+                </div>
+                
+                <div id="admin-panel" class="admin-panel">
+                    <h2><i class="fas fa-tools"></i> Admin Panel - Compression Tools</h2>
+                    
+                    <div class="admin-st极速赛车开奖直播
+                        <div class="stat-card">
+                            <h3>Posts</h3>
+                            <p id="postCount">0</p>
                         </div>
-                        <div class="post-body">
-                            Just discovered this amazing Twitter-OS forum! Loving the bird iconography and the clean design. Can't wait to connect with all of you here! 🐦
+                       极速赛车开奖直播 <div class="stat-card">
+                            <h3>Storage Used</h3>
+                            <p id="storageUsed">0 KB</p>
                         </div>
-                        <div class="post-footer">
-                            <div class="post-action"><i class="far fa-comment"></i> 24</div>
-                            <div class="post-action"><i class="fas fa-retweet"></i> 15</div>
-                            <div class="post-action"><i class="far fa-heart"></i> 89</div>
-                            <div class="post-action"><i class="fas fa-share-alt"></i></div>
+                        <div class="stat-card">
+                            <h3>Compression Ratio</h3>
+                            <p id="compressionRatio">0%</p>
                         </div>
                     </div>
                     
-                    <div class="post">
-                        <div class="post-header">
-                            <div class="post-avatar" style="background-color: #17bf63;">
-                                <i class="fas fa-user"></i>
-                            </div>
-                            <div class="post-user">Nature Lover <span class="post-handle">@birdwatcher · 4h</span></div>
-                            <div class="post-time"><i class="fas fa-globe-americas"></i></div>
-                        </div>
-                        <div class="post-body">
-                            The bird imagery in this forum is fantastic! It really brings me back to the early days of Twitter. Who else misses the old bird logo? #nostalgia
-                        </div>
-                        <div class="post-footer">
-                            <div class="post-action"><i class="far fa-comment"></i> 42</div>
-                            <div class="post-action"><i class="fas fa-retweet"></i> 31</div>
-                            <div class="post-action"><i class="far fa-heart"></i> 127</div>
-                            <div class="post-action"><i class="fas fa-share-alt"></i></div>
-                        </div>
+                    <div class="compression-controls">
+                        <button id="compressBtn" class="compression-btn"><i class="fas fa-compress-alt"></i> Compress Data</button>
+                        <button id="exportBtn" class="compression-btn"><i class="fas fa-file-export"></i> Export Data</button>
+                        <button id="importBtn" class="compression-btn"><i class="fas fa-file-import"></i> Import Data</button>
                     </div>
                     
-                    <div class="post">
-                        <div class="post-header">
-                            <div class="post-avatar" style="background-color: #e0245e;">
-                                <i class="fas fa-user"></i>
-                            </div>
-                            <div class="post-user">Tech Enthusiast <span class="post-handle">@coderlife · 6h</span></div>
-                            <div class="post-time"><i class="fas fa-globe-americas"></i></div>
-                        </div>
-                        <div class="post-body">
-                            This open-source Twitter forum is exactly what we needed! The code is clean and well-organized. Can't wait to contribute to the GitHub repository!
-                        </div>
-                        <div class="post-footer">
-                            <div class="post-action"><i class="far fa-comment"></i> 18</div>
-                            <div class="post-action"><i class="fas fa-retweet"></i> 22</div>
-                            <div class="post-action"><i class="far fa-heart"></i> 76</div>
-                            <div class="post-action"><i class="fas fa-share-alt"></i></div>
-                        </div>
+                    <div class="compression-info">
+                        <p><strong>Compression Algorithm:</strong> LZ-String based compression with Base64 encoding</p>
+                        <p><strong>Status:</strong> <span id="compressionStatus">Ready</span></p>
                     </div>
                 </div>
             </div>
@@ -552,7 +747,7 @@
                 </div>
                 
                 <div class="who-to-follow">
-                    <h2 class="box-title">Who to follow</h2>
+                    <h2 class="box-title">Who to follow</h极速赛车开奖直播
                     <div class="follow-item">
                         <div class="follow-info">
                             <div class="follow-avatar">
@@ -567,23 +762,23 @@
                     </div>
                     <div class="follow-item">
                         <div class="follow-info">
-                            <div class="follow-avatar" style="background-color: #794bc4;">
+                            <div class="follow-avatar" style="background: linear-gradient(to bottom right, #794bc4, #6a30c7);">
                                 <i class="fas fa-user"></i>
-                            </div>
+                            </极速赛车开奖直播
                             <div>
                                 <div class="post-user">UI Inspiration</div>
                                 <div class="post-handle">@uiinspiration</div>
                             </div>
                         </div>
                         <button class="follow-btn">Follow</button>
-                    </div>
+                    </极速赛车开奖直播
                     <div class="follow-item">
                         <div class="follow-info">
-                            <div class="follow-avatar" style="background-color: #f45d22;">
+                            <div class="follow-avatar" style="background: linear-gradient(to bottom right, #f45d22, #极速赛车开奖直播);">
                                 <i class="fas fa-user"></i>
                             </div>
                             <div>
-                                <div class="post-user">GitHub News</div>
+                                <div class极速赛车开奖直播"post-user">GitHub News</div>
                                 <div class="post-handle">@githubnews</div>
                             </div>
                         </div>
@@ -596,67 +791,753 @@
 
     <footer>
         <div class="container">
-            <p>Twitter-OS Forum &copy; 2023 | An open-source project with bird iconography</p>
+            <p>Twitter-OS Forum &copy; 2023 | An open-source project with bird iconography | Data stored locally in your browser</p>
         </div>
     </footer>
 
+    <div id="toast" class="toast">
+        Post published successfully!
+    </div>
+
     <script>
-        // Simple character counter for the textarea
-        document.addEventListener('DOMContentLoaded', function() {
-            const textarea = document.querySelector('.post-form textarea');
-            const charCount = document.querySelector('.char-count');
-            
-            textarea.addEventListener('input', function() {
-                const remaining = 280 - this.value.length;
-                charCount.textContent = `${remaining} characters remaining`;
+        // LZ-String Compression Library (included directly for GitHub hosting)
+        // This is a minimal version of the LZ-String compression algorithm
+        var LZString = {
+            compress: function (uncompressed) {
+                if (uncompressed == null) return "";
+                var value = uncompressed;
+                var context_dictionary = {};
+                var context_dictionaryToCreate = {};
+                var context_wc = "";
+                var context_w = "";
+                var context_enlarge极速赛车开奖直播 = 2;
+                var context_dictSize = 3;
+                var context_numBits = 2;
+                var context_data = [];
+                var context_data_val = 0;
+                var context_data_position = 0;
                 
-                if (remaining < 0) {
-                    charCount.style.color = '#e0245e';
-                } else {
-                    charCount.style.color = '#657786';
+                for (var ii = 0; ii < value.length; ii += 1) {
+                    var context_c = value.charAt(ii);
+                    if (!Object.prototype.hasOwnProperty.call(context_dictionary, context_c)) {
+                        context_dictionary[context_c] = context_dictSize++;
+                        context_dictionaryToCreate[context_c] = true;
+                    }
+                    
+                    context_wc = context_w + context_c;
+                    if (Object.prototype.hasOwnProperty.call(context_dictionary, context_wc)) {
+                        context_w = context_wc;
+                    } else {
+                        if (Object.prototype.hasOwnProperty.call(context_dictionaryToCreate, context_w)) {
+                            if (context_w.charCodeAt(0) < 256) {
+                                for (var i = 0; i < context_numBits; i++) {
+                                    context_data_val = (context_data_val << 1);
+                                    if (context_data_position == 15) {
+                                        context_data_position = 0;
+                                        context_data.push(String.fromCharCode(context_data_val));
+                                        context_data_val = 0;
+                                    } else {
+                                        context_data_position++;
+                                    }
+                                }
+                                context_data_val = context_w.charCodeAt(0);
+                                for (var i = 0; i < 8; i++) {
+                                    context_data_val = (context_data_val << 1);
+                                    if (context_data_position == 15) {
+                                        context_data_position = 0;
+                                        context_data.push(String.fromCharCode(context_data_val));
+                                        context_data极速赛车开奖直播 = 0;
+                                    } else {
+                                        context_data_position++;
+                                    }
+                                }
+                            } else {
+                                context_data_val极速赛车开奖直播 1;
+                                for (var i = 0; i < context_numBits; i++) {
+                                    context_data_val = (context_data_val << 1);
+                                    if (context_data_position == 15) {
+                                        context_data_position = 0;
+                                        context_data.push(String.fromCharCode(context_data_val));
+                                        context_data_val = 0;
+                                    } else {
+                                        context_data_position++;
+                                    }
+                                }
+                                context_data_val = context_w.charCodeAt(0);
+                                for (var i = 0; i < 16; i++) {
+                                    context_data_val = (context_data_val << 1);
+                                    if (context_data_position == 15) {
+                                        context_data_position = 0;
+                                        context_data.push(String.fromCharCode(context_data_val));
+                                        context_data_val = 0;
+                                    } else {
+                                        context_data_position++;
+                                    }
+                                }
+                            }
+                            context_enlargeIn--;
+                            if (context_enlargeIn == 0) {
+                                context_enlargeIn = Math.pow(2, context_numBits);
+                                context_numBits++;
+                            }
+                            delete context_dictionaryToCreate[context_w];
+                        } else {
+                            context_data_val = context_dictionary极速赛车开奖直播 context_w];
+                            for (var i = 0; i < context_numBits; i++) {
+                                context_data_val = (context_data_val << 1);
+                                if (context_data_position == 15) {
+                                    context_data_position = 0;
+                                    context_data.push(String.fromCharCode(context_data_val));
+                                    context_data_val = 0;
+                                } else {
+                                    context_data_position++;
+                                }
+                            }
+                        }
+                        context_enlargeIn--;
+                        if (context_enlargeIn == 极速赛车开奖直播) {
+                            context_enlargeIn = Math.pow(2, context极速赛车开奖直播);
+                            context_numBits++;
+                        }
+                        context_dictionary[context_wc] = context_dictSize++;
+                        context_w = String(context_c);
+                    }
                 }
-            });
+                
+                if (context_w !== "") {
+                    if (Object.prototype.hasOwnProperty.call(context_dictionaryToCreate, context_w)) {
+                        if (context_w.charCodeAt(0) < 256极速赛车开奖直播 {
+                            for (var i = 0; i < context_numBits; i++) {
+                                context_data_val = (context_data_val << 1);
+                                if (context_data_position == 15) {
+                                    context_data_position = 0;
+                                    context_data.push(String.fromCharCode(context_data_val));
+                                    context_data_val = 0;
+                                } else {
+                                    context_data_position++;
+                                }
+                            }
+                            context_data_val = context_w.charCodeAt(0);
+                            for (var i = 0; i < 8; i++) {
+                                context_data_val = (context_data_val << 1);
+                                if (context_data_position == 15) {
+                                    context_data_position = 0;
+                                    context_data.push(String.fromCharCode(context_data_val));
+                                    context_data_val = 0;
+                                } else {
+                                    context_data_position++;
+                                }
+                            }
+                        } else {
+                            context_data_val = 1;
+                            for (极速赛车开奖直播 i = 0; i < context_numBits; i++) {
+                                context_data_val = (context_data_val << 1);
+                                if (context_data_position == 15) {
+                                    context_data_position = 0;
+                                    context_data.push(String.fromCharCode(context_data_val));
+                                    context_data_val = 0;
+                                } else {
+                                    context_data_position++;
+                                }
+                            }
+                            context_data_val = context_w.charCodeAt(0);
+                            for (var i = 0; i < 16; i++) {
+                                context_data_val = (context_data_val << 1);
+                                if (context_data_position == 15) {
+                                    context_data_position = 0;
+                                    context_data.push(String.fromCharCode(context_data_val));
+                                    context_data_val = 0;
+                                } else {
+                                    context_data_position++;
+                                }
+                            }
+                        }
+                        context_enlargeIn--;
+                        if (context_enlargeIn == 0) {
+                            context_enlargeIn = Math.pow(2, context_numBits);
+                            context_numBits++;
+                        }
+                        delete context_dictionaryToCreate[context_w];
+                    } else {
+                        context_data_val = context_dictionary[context_w];
+                        for (var i = 0; i < context_numBits; i++) {
+                            context_data_val = (context_data_val << 1);
+                            if (context_data_position == 15) {
+                                context_data_position = 0;
+                                context_data.push(String.fromCharCode(context_data_val));
+                                context_data_val = 0;
+                            } else {
+                                context_data_position++;
+                            }
+                        }
+                    }
+                    context_enlargeIn--;
+                    if (context_enlargeIn == 0) {
+                        context_enlargeIn = Math.pow(2, context_numBits);
+                        context_numBits++;
+                    }
+                }
+                
+                context_data_val = 2;
+                for (var i = 0; i < context_numBits; i++) {
+                    context_data_val = (context_data_val << 1);
+                    if (context_data_position == 15) {
+                        context_data_position = 0;
+                        context_data.push(String.fromCharCode(context_data_val));
+                        context_data_val = 0;
+                    } else {
+                        context_data_position++;
+                    }
+                }
+                
+                while (true) {
+                    context_data_val = (context_data_val << 1);
+                    if (context_data_position == 15) {
+                        context_data.push(String.fromCharCode(context_data_val));
+                        break;
+                    } else {
+                        context_data_position++;
+                    }
+                }
+                
+                return context_data.join('');
+            },
             
-            // Post button functionality
-            const postBtn = document.querySelector('.post-btn');
-            postBtn.addEventListener('click', function() {
-                if (textarea.value.trim() !== '' && textarea.value.length <= 280) {
-                    // Create a new post element
-                    const postsContainer = document.querySelector('.posts');
-                    const newPost = document.createElement('div');
-                    newPost.className = 'post';
-                    
-                    // Get current time
-                    const now = new Date();
-                    const timeString = now.toLocaleTimeString([], {hour: '2-digit', minute:'2-digit'});
-                    
-                    newPost.innerHTML = `
-                        <div class="post-header">
-                            <div class="post-avatar">
-                                <i class="fas fa-user"></i>
-                            </div>
-                            <div class="post-user">Your Name <span class="post-handle">@yourusername · Just now</span></div>
-                            <div class="post-time"><i class="fas fa-globe-americas"></i></div>
-                        </div>
-                        <div class="post-body">
-                            ${textarea.value}
-                        </div>
-                        <div class="post-footer">
-                            <div class="post-action"><i class="far fa-comment"></i> 0</div>
-                            <div class="post-action"><i class="fas fa-retweet"></i> 0</div>
-                            <div class="post-action"><i class="far fa-heart"></i> 0</div>
-                            <div class="post-action"><i class="fas fa-share-alt"></i></div>
-                        </div>
-                    `;
-                    
-                    // Add the new post at the top
-                    postsContainer.insertBefore(newPost, postsContainer.firstChild);
-                    
-                    // Clear the textarea
-                    textarea.value = '';
-                    charCount.textContent = '280 characters remaining';
-                    charCount.style.color = '#657786';
+            decompress: function (compressed) {
+                if (compressed == null) return "";
+                if (compressed == "") return null;
+                
+                var dictionary = {},
+                    next,
+                    enlargeIn = 1,
+                    dictSize = 4,
+                    numBits = 3,
+                    entry = "",
+                    result = [],
+                    i,
+                    w,
+                    bits, resb, maxpower, power,
+                    c,
+                    data = {val: compressed.charCodeAt(0), position: 32768, index: 1};
+                
+                for (i = 0; i < 3; i += 1极速赛车开奖直播 {
+                    dictionary[i] = i;
                 }
+                
+                bits = 0;
+                maxpower = Math.pow(2, 2);
+                power = 1;
+                while (power != maxpower) {
+                    resb = data.val & data.position;
+                    data.position >>= 1;
+                    if (data.position == 0) {
+                        data.position = 32768;
+                        data.val = compressed.charCodeAt(data.index++);
+                    }
+                    bits |= (resb > 0 ? 1 : 0) * power;
+                    power <<= 1;
+                }
+                
+                switch (next = bits) {
+                    case 0:
+                        bits = 0;
+                        maxpower = Math.pow极速赛车开奖直播 2, 8);
+                        power = 1;
+                        while (power != maxpower) {
+                            resb = data.val & data.position;
+                            data.position >>= 1;
+                            if (data.position == 0) {
+                                data.position = 327极速赛车开奖直播
+                                data.val = compressed.charCodeAt(data.index++);
+                            }
+                            bits |= (resb > 0 ? 1 : 0极速赛车开奖直播 * power;
+                            power <<= 1;
+                        }
+                        c = String.fromCharCode(bits);
+                        break;
+                    case 1:
+                        bits = 0;
+                        maxpower = Math.pow(2, 16);
+                        power = 1;
+                        while (power != maxpower) {
+                            resb = data.val & data.position;
+                            data.position >>= 1;
+                            if (data.position == 0) {
+                                data.position = 32768;
+                                data.val = compressed.charCodeAt(data.index++);
+                            }
+                            bits |= (resb > 0 ? 1 : 0) * power;
+                            power <<= 1;
+                        }
+                        c = String.fromCharCode(b极速赛车开奖直播
+                        break;
+                    case 2:
+                        return "";
+                }
+                
+                dictionary[3极速赛车开奖直播 = c;
+                w = c;
+                result.push(c);
+                
+                while (true) {
+                    if (data.index > compressed.length) {
+                        return "";
+                    }
+                    
+                    bits = 0;
+                    maxpower = Math.pow(2, numBits);
+                    power = 1;
+                    while (power != maxpower) {
+                        resb = data.val & data.position;
+                        data.position >>= 1;
+                        if (data.position == 0) {
+                            data.position = 32768;
+                            data.val = compressed.charCodeAt(data.index++);
+                        }
+                        bits |= (resb > 0 ? 1 : 0) * power;
+                        power <<= 1;
+                    }
+                    
+                    switch (c = bits) {
+                        case 0:
+                            bits = 0;
+                            maxpower = Math.pow(2, 8);
+                            power = 1;
+                            while (power != maxpower) {
+                                resb = data.val & data.position;
+                                data.position >>= 1;
+                                if (data.position == 0) {
+                                    data.position = 32768;
+                                    data.val = compressed.charCodeAt(data.index++);
+                                }
+                                bits |= (resb > 0 ? 1 : 0) * power;
+                                power <<= 1;
+                            }
+                            
+                            dictionary[dictSize++] = String.fromCharCode(bits);
+                            c = dictSize - 1;
+                            enlargeIn--;
+                            break;
+                        case 1:
+                            bits = 0;
+                            maxpower = Math.pow(2, 16);
+                            power = 1;
+                            while (power != maxpower) {
+                                resb = data.val & data.position;
+                                data.position >>= 1;
+                                if (data.position == 0) {
+                                    data.position = 32768;
+                                    data.val = compressed.charCodeAt(data.index++);
+                                }
+                                bits |= (resb > 0 ? 1 : 0) * power;
+                                power <<= 1;
+                            }
+                            
+                            dictionary[dictSize++] = String.fromCharCode(bits);
+                            c = dictSize - 1;
+                            enlargeIn--;
+                            break;
+                        case 2:
+                            return "";
+                        default:
+                            c = bits;
+                    }
+                    
+                    if (c == 2) {
+                        return result.join('');
+                    }
+                    
+                    if (c == 0 || c == 1) {
+                        dictionary[dictSize++] = c == 0 ? String.fromCharCode(bits) : String.fromCharCode(bits);
+                        c = dictSize - 1;
+                        enlargeIn--;
+                    } else if (c > dictSize) {
+                        return null;
+                    }
+                    
+                    if (enlargeIn == 0) {
+                        enlargeIn = Math.pow(2, numBits);
+                        numBits++;
+                    }
+                    
+                    if (dictionary[c]) {
+                        entry = dictionary[c];
+                    } else {
+                        if (c === dictSize) {
+                            entry = w + w.charAt(0);
+                        } else {
+                            return null;
+                        }
+                    }
+                    result.push(entry);
+                    
+                    dictionary[dictSize++] = w + entry.charAt(0);
+                    enlargeIn--;
+                    
+                    w = entry;
+                    
+                    if (enlargeIn == 0) {
+                        enlargeIn = Math.pow(2, numBits);
+                        numBits++;
+                    }
+                }
+            }
+        };
+
+        // Data storage functions
+        function getPosts() {
+            const postsJSON = localStorage.getItem('twitterOSPosts');
+            if (postsJSON) {
+                try {
+                    // Try to decompress first
+                    return JSON.parse(LZString.decompress(postsJSON));
+                } catch (e) {
+                    // If decompression fails, try parsing directly
+                    return JSON.parse(postsJSON);
+                }
+            }
+            return [];
+        }
+
+        function savePosts(posts) {
+            const compressed = LZString.compress(JSON.stringify(posts));
+            localStorage.setItem('twitterOSPosts', compressed);
+            updateStorageStats();
+        }
+
+        function getUserData() {
+            const userDataJSON = localStorage.getItem('twitterOSUser');
+            if (userDataJSON) {
+                return JSON.parse(userDataJSON);
+            } else {
+                // Default user data
+                const defaultUser = {
+                    name: "Your Name",
+                    handle: "@yourusername"
+                };
+                localStorage.setItem('twitterOSUser', JSON.stringify(defaultUser));
+                return defaultUser;
+            }
+        }
+
+        function saveUserData(userData) {
+            localStorage.setItem('twitterOSUser', JSON.stringify(userData));
+        }
+
+        // DOM elements
+        const postContent = document.getElementById('postContent');
+        const charCount = document.getElementById('charCount');
+        const postBtn = document.getElementById('postBtn');
+        const postsContainer = document.getElementById('postsContainer');
+        const loadingElement = document.querySelector('.loading');
+        const toast = document.getElementById('toast');
+        const usernameElement = document.getElementById('username');
+        const userhandleElement = document.getElementById('userhandle');
+        const postCountElement = document.getElementById('postCount');
+        const storageUsedElement = document.getElementById('storageUsed');
+        const compressionRatioElement = document.getElementById('compressionRatio');
+        const compressionStatusElement = document.getElementById('compressionStatus');
+        const compressBtn = document.getElementById('compressBtn');
+        const exportBtn = document.getElementById('exportBtn');
+        const importBtn = document.getElementById('importBtn');
+
+        // Initialize user data
+        const userData = getUserData();
+        usernameElement.textContent = userData.name;
+        userhandleElement.textContent = userData.handle;
+
+        // Show loading animation
+        function showLoading() {
+            loadingElement.style.display = 'block';
+            postsContainer.style.opacity = '0.5';
+        }
+
+        // Hide loading animation
+        function hideLoading() {
+            loadingElement.style.display = 'none';
+            postsContainer.style.opacity = '1';
+        }
+
+        // Show toast notification
+        function showToast(message) {
+            toast.textContent = message;
+            toast.classList.add('show');
+            setTimeout(() => {
+                toast.classList.remove('show');
+            }, 3000);
+        }
+
+        // Format date to relative time
+        function formatRelativeTime(dateString) {
+            const date = new Date(dateString);
+            const now = new Date();
+            const diffInSeconds = Math.floor((now - date) / 1000);
+            
+            if (diffInSeconds < 60) {
+                return 'Just now';
+            } else if (diffInSeconds < 3600) {
+                const minutes = Math.floor(diff极速赛车开奖直播 / 60);
+                return `${minutes}m ago`;
+            } else if (diffInSeconds < 86400) {
+                const hours = Math.floor(diffInSeconds / 3600);
+                return `${hours}h ago`;
+            } else {
+                const days = Math.floor(diffInSeconds / 86400);
+                return `${days}d ago`;
+            }
+        }
+
+        // Generate random color for avatar
+        function getRandomColor() {
+            const colors = [
+                'linear-gradient(to bottom right, #1da1f2, #0f7ae5)',
+                'linear-gradient(to bottom right, #17bf63, #119e4d)',
+                'linear-gradient(to bottom right, #f45d22, #e04a0c)',
+                'linear-gradient(to bottom right, #794bc4, #6a30c7)',
+                'linear-gradient(to bottom right, #e0245极速赛车开奖直播, #c81a4f)'
+            ];
+            return colors[Math.floor(Math.random() * colors.length)];
+        }
+
+        // Update storage statistics
+        function updateStorageStats() {
+            const posts = getPosts();
+            postCountElement.textContent = posts.length;
+            
+            // Calculate storage used
+            const postsJSON = JSON.stringify(posts);
+            const compressedJSON = LZString.compress(postsJSON);
+            const storageUsed = Math.round(compressedJSON.length / 1024 * 100) / 100;
+            storageUsedElement.textContent = `${storageUsed} KB`;
+            
+            // Calculate compression ratio
+            const originalSize = new Blob([postsJSON]).size;
+            const compressedSize = new Blob([compressedJSON]).size;
+            const ratio = Math.round((1 - compressedSize / originalSize) * 100);
+            compressionRatioElement.textContent = `${ratio}%`;
+        }
+
+        // Render posts
+        function renderPosts() {
+            showLoading();
+            
+            // Simulate network delay
+            setTimeout(() => {
+                const posts = getPosts();
+                
+                if (posts.length === 0) {
+                    // Add sample posts if none exist
+                    const samplePosts = [
+                        {
+                            id: 1,
+                            username: "Twitter User",
+                            handle: "@twitteruser",
+                            content: "Just discovered this amazing Twitter-OS forum! Loving the bird iconography and the clean design. Can't wait to connect with all of you here! 🐦",
+                            timestamp: new Date(Date.now() - 2 * 60 * 60 * 1000).toISOString(),
+                            likes: 89,
+                            retweets: 15,
+                            comments: 24,
+                            avatarColor: getRandomColor()
+                        },
+                        {
+                            id: 2,
+                            username: "Nature Lover",
+                            handle: "@birdwatcher",
+                            content: "The bird imagery in this forum is fantastic! It really brings me back to the early days of Twitter. Who else misses the old bird logo? #nostalgia",
+                            timestamp: new Date(Date.now() - 4 * 60 * 60 * 1000).toISOString(),
+                            likes: 127,
+                            retweets: 31,
+                            comments: 42,
+                            avatarColor: getRandomColor()
+                        },
+                        {
+                            id: 3,
+                            username: "Tech Enthusiast",
+                            handle: "@coderlife",
+                            content: "This open-source Twitter forum is exactly what we needed! The code is clean and well-organized. Can't wait to contribute to the GitHub repository!",
+                            timestamp: new Date(Date.now() - 6 * 60 * 60 * 1000).极速赛车开奖直播String(),
+                            likes: 76,
+                            retweets: 22,
+                            comments: 18,
+                            avatarColor: getRandomColor()
+                        }
+                    ];
+                    
+                    savePosts(samplePosts);
+                    postsContainer.innerHTML = generatePostsHTML(samplePosts);
+                } else {
+                    postsContainer.innerHTML = generatePostsHTML(posts);
+                }
+                
+                updateStorageStats();
+                hideLoading();
+            }, 800);
+        }
+
+        // Generate HTML for posts
+        function generatePostsHTML(posts) {
+            return posts.map(post => `
+                <div class="post" data-id="${post.id}">
+                    <div class="post-header">
+                        <div class="post-avatar" style="background: ${post.avatarColor || getRandomColor()}">
+                            <i class="fas fa-user"></i>
+                        </div>
+                        <div class="post-user">${post.username} <span class="post-handle">${post.handle}</span></div>
+                        <div class="post-time">${formatRelativeTime(post.timestamp)}</div>
+                    </div>
+                    <div class="post-body">
+                        ${post.content}
+                    </div>
+                    <div class="post-footer">
+                        <div class="post-action comment"><i class="far fa-comment"></i> ${post.comments}</div>
+                        <div class="post-action retweet"><i class="fas fa-retweet"></i> ${post.retweets}</div>
+                        <div class="post-action like"><i class="far fa-heart"></i> ${post.likes}</div>
+                        <div class="post-action"><i class="fas fa-share-alt"></i></div>
+                    </div>
+                </div>
+            `).join('');
+        }
+
+        // Character counter for the textarea
+        postContent.addEventListener('input', function() {
+            const remaining = 280 - this.value.length;
+            charCount.textContent = `${remaining} characters remaining`;
+            
+            if (remaining < 0) {
+                charCount.classList.add('warning');
+                postBtn.disabled = true;
+            } else if (remaining < 20) {
+                charCount.classList.add('warning');
+                postBtn.disabled = false;
+            } else {
+                charCount.classList.remove('warning');
+                postBtn.disabled = false;
+            }
+        });
+
+        // Post button functionality
+        postBtn.addEventListener('click', function() {
+            const content = postContent.value.trim();
+            
+            if (content && content.length <= 280) {
+                const posts = getPosts();
+                const newPost = {
+                    id: Date.now(),
+                    username: userData.name,
+                    handle: userData.handle,
+                    content: content,
+                    timestamp: new Date().toISOString(),
+                    likes: 0,
+                    retweets: 0,
+                    comments: 0,
+                    avatarColor: getRandomColor()
+                };
+                
+                posts.unshift(newPost);
+                savePosts(posts);
+                
+                // Clear the textarea
+                postContent.value = '';
+                charCount.textContent = '280 characters remaining';
+                charCount.classList.remove('warning');
+                
+                // Show success message
+                showToast('Tweet posted successfully!');
+                
+                // Re-render posts
+                renderPosts();
+            }
+        });
+
+        // Compression functionality
+        compressBtn.addEventListener('click', function() {
+            compressionStatusElement.textContent = 'Compressing...';
+            setTimeout(() => {
+                // Re-save posts to trigger compression
+                const posts = getPosts();
+                savePosts(posts);
+                compressionStatusElement.textContent = 'Compressed successfully!';
+                showToast('Data compressed successfully');
+                
+                setTimeout(() => {
+                    compressionStatusElement.textContent = 'Ready';
+                }, 2000);
+            }, 1000);
+        });
+
+        // Export functionality
+        exportBtn.addEventListener('click', function() {
+            const posts = getPosts();
+            const dataStr = JSON.stringify(posts);
+            const dataUri = 'data:application/json;charset=utf-8,'+ encodeURIComponent(dataStr);
+            
+            const exportFileDefaultName = 'twitter-os-data.json';
+            
+            const linkElement = document.createElement('a');
+            linkElement.setAttribute('href', dataUri);
+            linkElement.setAttribute('download', exportFileDefaultName);
+            linkElement.click();
+            
+            showToast('Data exported successfully');
+        });
+
+        // Import functionality
+        importBtn.addEventListener('click', function() {
+            const input = document.createElement('input');
+            input.type = 'file';
+            input.accept = '.json';
+            
+            input.onchange = e => { 
+                const file = e.target.files[0];
+                const reader = new FileReader();
+                
+                reader.onload = function(e) {
+                    try {
+                        const posts = JSON.parse(e.target.result);
+                        savePosts(posts);
+                        renderPosts();
+                        showToast('Data imported successfully');
+                    } catch (error) {
+                        showToast('Error importing data');
+                    }
+                };
+                
+                reader.readAsText(file);
+            };
+            
+            input.click();
+        });
+
+        // Initialize the page
+        document.addEventListener('DOMContentLoaded', function() {
+            renderPosts();
+            
+            // Add event listeners for post actions
+            postsContainer.addEventListener('click', function(e) {
+                const postAction = e.target.closest('.post-action');
+                if (!postAction) return;
+                
+                const post = postAction.closest('.post');
+                const postId = parseInt(post.dataset.id);
+                const posts = getPosts();
+                const postIndex = posts.findIndex(p => p.id === postId);
+                
+                if (postIndex === -1) return;
+                
+                if (postAction.classList.contains('like')) {
+                    posts[postIndex].likes++;
+                    showToast('Liked post!');
+                } else if (postAction.classList.contains('retweet')) {
+                    posts[postIndex].retweets++;
+                    showToast('Retweeted!');
+                } else if (postAction.classList.contains('comment')) {
+                    posts[postIndex].comments++;
+                    postContent.focus();
+                    showToast('Reply started!');
+                }
+                
+                savePosts(posts);
+                renderPosts();
             });
         });
     </script>
