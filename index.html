@@ -1,0 +1,664 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Twitter-OS: Bird Forum</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Arial, sans-serif;
+        }
+        
+        body {
+            background-color: #e6ecf0;
+            color: #14171a;
+            line-height: 1.6;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 15px;
+        }
+        
+        /* Header Styles */
+        header {
+            background-color: #1da1f2;
+            color: white;
+            padding: 10px 0;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            display: flex;
+            align-items: center;
+        }
+        
+        .logo i {
+            font-size: 28px;
+            margin-right: 10px;
+        }
+        
+        .logo h1 {
+            font-size: 20px;
+            font-weight: 700;
+        }
+        
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+        
+        nav ul li {
+            margin-left: 20px;
+        }
+        
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+        }
+        
+        nav ul li a i {
+            margin-right: 5px;
+        }
+        
+        /* Main Content */
+        .main-content {
+            display: flex;
+            margin-top: 20px;
+            gap: 20px;
+        }
+        
+        /* Sidebar */
+        .sidebar {
+            flex: 0 0 250px;
+            background-color: white;
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            height: fit-content;
+        }
+        
+        .user-profile {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+        
+        .user-avatar {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background-color: #1da1f2;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 20px;
+            margin-right: 10px;
+        }
+        
+        .user-info h3 {
+            font-size: 16px;
+        }
+        
+        .user-info p {
+            color: #657786;
+            font-size: 14px;
+        }
+        
+        .sidebar-menu {
+            list-style: none;
+        }
+        
+        .sidebar-menu li {
+            margin-bottom: 15px;
+        }
+        
+        .sidebar-menu a {
+            color: #14171a;
+            text-decoration: none;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+        }
+        
+        .sidebar-menu a i {
+            margin-right: 10px;
+            color: #1da1f2;
+            width: 20px;
+        }
+        
+        .sidebar-menu a:hover {
+            color: #1da1f2;
+        }
+        
+        /* Forum Content */
+        .forum-content {
+            flex: 1;
+        }
+        
+        .post-form {
+            background-color: white;
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            margin-bottom: 20px;
+        }
+        
+        .post-form textarea {
+            width: 100%;
+            border: 1px solid #e6ecf0;
+            border-radius: 10px;
+            padding: 15px;
+            resize: vertical;
+            min-height: 100px;
+            font-size: 16px;
+            margin-bottom: 15px;
+        }
+        
+        .post-options {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-bottom: 15px;
+        }
+        
+        .option-btn {
+            background-color: #f5f8fa;
+            border: 1px solid #e6ecf0;
+            border-radius: 20px;
+            padding: 8px 15px;
+            display: flex;
+            align-items: center;
+            cursor: pointer;
+            font-size: 14px;
+            color: #657786;
+        }
+        
+        .option-btn i {
+            margin-right: 5px;
+            color: #1da1f2;
+        }
+        
+        .post-actions {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .char-count {
+            color: #657786;
+            font-size: 14px;
+        }
+        
+        .post-btn {
+            background-color: #1da1f2;
+            color: white;
+            border: none;
+            border-radius: 20px;
+            padding: 10px 20px;
+            font-weight: 700;
+            cursor: pointer;
+        }
+        
+        .post-btn:hover {
+            background-color: #1a91da;
+        }
+        
+        /* Posts */
+        .posts {
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            overflow: hidden;
+        }
+        
+        .post {
+            padding: 20px;
+            border-bottom: 1px solid #e6ecf0;
+        }
+        
+        .post-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 10px;
+        }
+        
+        .post-avatar {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background-color: #1da1f2;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 16px;
+            margin-right: 10px;
+        }
+        
+        .post-user {
+            font-weight: 700;
+        }
+        
+        .post-handle {
+            color: #657786;
+            margin-left: 5px;
+        }
+        
+        .post-time {
+            color: #657786;
+            margin-left: auto;
+            font-size: 14px;
+        }
+        
+        .post-body {
+            margin-bottom: 15px;
+            font-size: 16px;
+            line-height: 1.5;
+        }
+        
+        .post-footer {
+            display: flex;
+            color: #657786;
+        }
+        
+        .post-action {
+            display: flex;
+            align-items: center;
+            margin-right: 20px;
+            cursor: pointer;
+        }
+        
+        .post-action i {
+            margin-right: 5px;
+        }
+        
+        .post-action:hover {
+            color: #1da1f2;
+        }
+        
+        /* Right Sidebar */
+        .right-sidebar {
+            flex: 0 0 300px;
+        }
+        
+        .trending-box, .who-to-follow {
+            background-color: white;
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            margin-bottom: 20px;
+        }
+        
+        .box-title {
+            font-size: 18px;
+            font-weight: 700;
+            margin-bottom: 15px;
+            padding-bottom: 10px;
+            border-bottom: 1px solid #e6ecf0;
+        }
+        
+        .trending-item, .follow-item {
+            padding: 10px 0;
+            border-bottom: 1px solid #e6ecf0;
+        }
+        
+        .trending-item:last-child, .follow-item:last-child {
+            border-bottom: none;
+        }
+        
+        .trending-topic {
+            font-weight: 700;
+            margin-bottom: 5px;
+        }
+        
+        .trending-count {
+            color: #657786;
+            font-size: 14px;
+        }
+        
+        .follow-item {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        
+        .follow-info {
+            display: flex;
+            align-items: center;
+        }
+        
+        .follow-avatar {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background-color: #1da1f2;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 16px;
+            margin-right: 10px;
+        }
+        
+        .follow-btn {
+            background-color: #1da1f2;
+            color: white;
+            border: none;
+            border-radius: 20px;
+            padding: 5px 15px;
+            font-weight: 700;
+            cursor: pointer;
+        }
+        
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 20px 0;
+            color: #657786;
+            font-size: 14px;
+            margin-top: 40px;
+        }
+        
+        /* Responsive */
+        @media (max-width: 992px) {
+            .main-content {
+                flex-direction: column;
+            }
+            
+            .sidebar, .right-sidebar {
+                flex: 1;
+                margin-bottom: 20px;
+            }
+        }
+        
+        @media (max-width: 576px) {
+            .header-content {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            nav ul {
+                margin-top: 10px;
+                justify-content: center;
+            }
+            
+            nav ul li {
+                margin: 0 10px;
+            }
+            
+            .post-options {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <i class="fas fa-dove"></i>
+                    <h1>Twitter-OS</h1>
+                </div>
+                <nav>
+                    <ul>
+                        <li><a href="#"><i class="fas fa-home"></i> Home</a></li>
+                        <li><a href="#"><i class="fas fa-hashtag"></i> Explore</a></li>
+                        <li><a href="#"><i class="fas fa-bell"></i> Notifications</a></li>
+                        <li><a href="#"><i class="fas fa-envelope"></i> Messages</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <div class="container">
+        <div class="main-content">
+            <div class="sidebar">
+                <div class="user-profile">
+                    <div class="user-avatar">
+                        <i class="fas fa-user"></i>
+                    </div>
+                    <div class="user-info">
+                        <h3>Your Name</h3>
+                        <p>@yourusername</p>
+                    </div>
+                </div>
+                
+                <ul class="sidebar-menu">
+                    <li><a href="#"><i class="fas fa-user"></i> Profile</a></li>
+                    <li><a href="#"><i class="fas fa-list"></i> Lists</a></li>
+                    <li><a href="#"><i class="fas fa-bookmark"></i> Bookmarks</a></li>
+                    <li><a href="#"><i class="fas fa-bolt"></i> Moments</a></li>
+                    <li><a href="#"><i class="fas fa-cog"></i> Settings</a></li>
+                </ul>
+            </div>
+            
+            <div class="forum-content">
+                <div class="post-form">
+                    <textarea placeholder="What's happening?"></textarea>
+                    
+                    <div class="post-options">
+                        <div class="option-btn"><i class="fas fa-image"></i> Media</div>
+                        <div class="option-btn"><i class="fas fa-poll"></i> Poll</div>
+                        <div class="option-btn"><i class="fas fa-map-marker-alt"></i> Location</div>
+                        <div class="option-btn"><i class="fas fa-smile"></i> Emoji</div>
+                    </div>
+                    
+                    <div class="post-actions">
+                        <div class="char-count">280 characters remaining</div>
+                        <button class="post-btn">Tweet</button>
+                    </div>
+                </div>
+                
+                <div class="posts">
+                    <div class="post">
+                        <div class="post-header">
+                            <div class="post-avatar">
+                                <i class="fas fa-user"></i>
+                            </div>
+                            <div class="post-user">Twitter User <span class="post-handle">@twitteruser · 2h</span></div>
+                            <div class="post-time"><i class="fas fa-globe-americas"></i></div>
+                        </div>
+                        <div class="post-body">
+                            Just discovered this amazing Twitter-OS forum! Loving the bird iconography and the clean design. Can't wait to connect with all of you here! 🐦
+                        </div>
+                        <div class="post-footer">
+                            <div class="post-action"><i class="far fa-comment"></i> 24</div>
+                            <div class="post-action"><i class="fas fa-retweet"></i> 15</div>
+                            <div class="post-action"><i class="far fa-heart"></i> 89</div>
+                            <div class="post-action"><i class="fas fa-share-alt"></i></div>
+                        </div>
+                    </div>
+                    
+                    <div class="post">
+                        <div class="post-header">
+                            <div class="post-avatar" style="background-color: #17bf63;">
+                                <i class="fas fa-user"></i>
+                            </div>
+                            <div class="post-user">Nature Lover <span class="post-handle">@birdwatcher · 4h</span></div>
+                            <div class="post-time"><i class="fas fa-globe-americas"></i></div>
+                        </div>
+                        <div class="post-body">
+                            The bird imagery in this forum is fantastic! It really brings me back to the early days of Twitter. Who else misses the old bird logo? #nostalgia
+                        </div>
+                        <div class="post-footer">
+                            <div class="post-action"><i class="far fa-comment"></i> 42</div>
+                            <div class="post-action"><i class="fas fa-retweet"></i> 31</div>
+                            <div class="post-action"><i class="far fa-heart"></i> 127</div>
+                            <div class="post-action"><i class="fas fa-share-alt"></i></div>
+                        </div>
+                    </div>
+                    
+                    <div class="post">
+                        <div class="post-header">
+                            <div class="post-avatar" style="background-color: #e0245e;">
+                                <i class="fas fa-user"></i>
+                            </div>
+                            <div class="post-user">Tech Enthusiast <span class="post-handle">@coderlife · 6h</span></div>
+                            <div class="post-time"><i class="fas fa-globe-americas"></i></div>
+                        </div>
+                        <div class="post-body">
+                            This open-source Twitter forum is exactly what we needed! The code is clean and well-organized. Can't wait to contribute to the GitHub repository!
+                        </div>
+                        <div class="post-footer">
+                            <div class="post-action"><i class="far fa-comment"></i> 18</div>
+                            <div class="post-action"><i class="fas fa-retweet"></i> 22</div>
+                            <div class="post-action"><i class="far fa-heart"></i> 76</div>
+                            <div class="post-action"><i class="fas fa-share-alt"></i></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="right-sidebar">
+                <div class="trending-box">
+                    <h2 class="box-title">Trending Topics</h2>
+                    <div class="trending-item">
+                        <div class="trending-topic">#TwitterOS</div>
+                        <div class="trending-count">5,243 posts</div>
+                    </div>
+                    <div class="trending-item">
+                        <div class="trending-topic">#BirdIconography</div>
+                        <div class="trending-count">3,187 posts</div>
+                    </div>
+                    <div class="trending-item">
+                        <div class="trending-topic">#OpenSource</div>
+                        <div class="trending-count">2,891 posts</div>
+                    </div>
+                    <div class="trending-item">
+                        <div class="trending-topic">Web Development</div>
+                        <div class="trending-count">2,543 posts</div>
+                    </div>
+                </div>
+                
+                <div class="who-to-follow">
+                    <h2 class="box-title">Who to follow</h2>
+                    <div class="follow-item">
+                        <div class="follow-info">
+                            <div class="follow-avatar">
+                                <i class="fas fa-user"></i>
+                            </div>
+                            <div>
+                                <div class="post-user">Web Dev Tips</div>
+                                <div class="post-handle">@webdevtips</div>
+                            </div>
+                        </div>
+                        <button class="follow-btn">Follow</button>
+                    </div>
+                    <div class="follow-item">
+                        <div class="follow-info">
+                            <div class="follow-avatar" style="background-color: #794bc4;">
+                                <i class="fas fa-user"></i>
+                            </div>
+                            <div>
+                                <div class="post-user">UI Inspiration</div>
+                                <div class="post-handle">@uiinspiration</div>
+                            </div>
+                        </div>
+                        <button class="follow-btn">Follow</button>
+                    </div>
+                    <div class="follow-item">
+                        <div class="follow-info">
+                            <div class="follow-avatar" style="background-color: #f45d22;">
+                                <i class="fas fa-user"></i>
+                            </div>
+                            <div>
+                                <div class="post-user">GitHub News</div>
+                                <div class="post-handle">@githubnews</div>
+                            </div>
+                        </div>
+                        <button class="follow-btn">Follow</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <div class="container">
+            <p>Twitter-OS Forum &copy; 2023 | An open-source project with bird iconography</p>
+        </div>
+    </footer>
+
+    <script>
+        // Simple character counter for the textarea
+        document.addEventListener('DOMContentLoaded', function() {
+            const textarea = document.querySelector('.post-form textarea');
+            const charCount = document.querySelector('.char-count');
+            
+            textarea.addEventListener('input', function() {
+                const remaining = 280 - this.value.length;
+                charCount.textContent = `${remaining} characters remaining`;
+                
+                if (remaining < 0) {
+                    charCount.style.color = '#e0245e';
+                } else {
+                    charCount.style.color = '#657786';
+                }
+            });
+            
+            // Post button functionality
+            const postBtn = document.querySelector('.post-btn');
+            postBtn.addEventListener('click', function() {
+                if (textarea.value.trim() !== '' && textarea.value.length <= 280) {
+                    // Create a new post element
+                    const postsContainer = document.querySelector('.posts');
+                    const newPost = document.createElement('div');
+                    newPost.className = 'post';
+                    
+                    // Get current time
+                    const now = new Date();
+                    const timeString = now.toLocaleTimeString([], {hour: '2-digit', minute:'2-digit'});
+                    
+                    newPost.innerHTML = `
+                        <div class="post-header">
+                            <div class="post-avatar">
+                                <i class="fas fa-user"></i>
+                            </div>
+                            <div class="post-user">Your Name <span class="post-handle">@yourusername · Just now</span></div>
+                            <div class="post-time"><i class="fas fa-globe-americas"></i></div>
+                        </div>
+                        <div class="post-body">
+                            ${textarea.value}
+                        </div>
+                        <div class="post-footer">
+                            <div class="post-action"><i class="far fa-comment"></i> 0</div>
+                            <div class="post-action"><i class="fas fa-retweet"></i> 0</div>
+                            <div class="post-action"><i class="far fa-heart"></i> 0</div>
+                            <div class="post-action"><i class="fas fa-share-alt"></i></div>
+                        </div>
+                    `;
+                    
+                    // Add the new post at the top
+                    postsContainer.insertBefore(newPost, postsContainer.firstChild);
+                    
+                    // Clear the textarea
+                    textarea.value = '';
+                    charCount.textContent = '280 characters remaining';
+                    charCount.style.color = '#657786';
+                }
+            });
+        });
+    </script>
+</body>
+</html>
